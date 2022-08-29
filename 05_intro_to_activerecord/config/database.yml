@@ -1,0 +1,3 @@
+development:
+  adapter: sqlite3
+  database: 'db/pet_walker.db'
