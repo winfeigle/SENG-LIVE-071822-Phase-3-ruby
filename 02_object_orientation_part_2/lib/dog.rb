@@ -1,5 +1,6 @@
 class Dog
-  attr_accessor :name, :age, :breed, :image_url, :last_fed_at, :last_walked_at
+  attr_reader :breed
+  attr_accessor :name, :age, :image_url, :last_fed_at, :last_walked_at
   # ✅ 1. class variable: all - holds all dogs we have saved
 
   # initialize with an optional hash of attributes
@@ -10,7 +11,6 @@ class Dog
     @image_url = image_url
     @last_fed_at = last_fed_at
     @last_walked_at = last_walked_at
-    @@all << self
   end
 
   # ✅ 2. class method: 'all' - retrieves the value of the class variable
