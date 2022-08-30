@@ -21,4 +21,6 @@ def reload
   load "lib/pet.rb"
   load "lib/cat.rb"
   load "lib/dog.rb"
+  load "lib/helper_methods.rb"
+  load "lib/pets_data.rb"
 end
