@@ -19,6 +19,10 @@ end
 #   Pet.all.each{|p| Owner.all.sample.adopt_pet(p)}
 # end 
 
+# def seed_appointments
+#   100.times{Appointment.new(request:'walk', complete:false, pet_id:Pet.all.sample.id, handler_id:Handler.all.sample.id)}
+# end 
+
 def seed
   puts "Starting seeding...."
   puts "seeding dogs..."
@@ -31,5 +35,7 @@ def seed
   seed_handlers
   # puts "seeding adoptions"
   # seed_adoptions
+  # puts "seeding appointments"
+  # seed_appointments
   puts "done"
 end 

@@ -7,6 +7,7 @@ class Dog < Pet
     @@all.filter{|p| p.class == self}
   end 
 
+
   def greet
     puts "Who's a good pupper??"
   end

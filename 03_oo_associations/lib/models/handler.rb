@@ -15,9 +15,18 @@ class Handler
         @@all
     end 
 
+    def self.first
+        @@all[0]
+    end 
+  
+    def self.second
+        @@all[1]
+    end
+
     def self.by_index(idx)
         @@all[idx]
     end 
 
-    #Instance Methods 
+    #Instance Methods
+     
 end 

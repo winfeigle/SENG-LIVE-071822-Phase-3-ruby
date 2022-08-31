@@ -5,7 +5,6 @@ class Pet
     attr_accessor :name, :age, :breed, :image_url, :last_fed_at
 
     @@all = []
-    #Mass assignment example
     def initialize(attributes={})
       @id = @@all.length+1 
       @name = attributes[:name]
@@ -14,6 +13,7 @@ class Pet
       @image_url = attributes[:image_url]
       @last_fed_at = nil
       @last_walked_at = nil
+      #add owner_id here and in the attr_accessor
       @@all << self
     end
 
@@ -22,13 +22,22 @@ class Pet
         @@all
     end
 
-    def self.pet_names
-        @@all.map{|p| p.name}
+    def self.first
+      @@all[0]
+    end 
+
+    def self.second
+      @@all[1]
     end 
 
     def self.by_index(idx)
         @@all[idx]
     end 
+
+    def self.pet_names
+      @@all.map{|p| p.name}
+    end 
+
 
     #Instance methods
     def print
@@ -41,6 +50,12 @@ class Pet
         puts
         puts
     end
+
+    # Retrun every appontment that belongs to a pet instance
+
+    # Return every handler a pet instance is assoicated with
+
+ 
 
     
 private

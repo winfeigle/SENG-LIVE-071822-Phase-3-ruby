@@ -17,10 +17,23 @@ class Owner
         @@all
     end 
 
+    def self.first
+        @@all[0]
+    end 
+  
+    def self.second
+        @@all[1]
+    end 
+  
     def self.by_index(idx)
         @@all[idx]
     end 
+
+    #Find every pet belonging to this owner
+
+    #Return the name of every pet belonging to this owner
     
     
     #Instance methods
+    #Adopt a pet
 end 

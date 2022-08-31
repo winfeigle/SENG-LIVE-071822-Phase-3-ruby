@@ -1,5 +1,5 @@
 class Appointment  
-  #Appointments creats a many to many relationship between Handler and Pet
+  #Appointments Joins pets and handlers together for a many-to-many relationship
 
   #The appointments can be a walk or a drop-in visit
   attr_reader :id
@@ -9,6 +9,7 @@ class Appointment
     @id = @@all.length+1
     @request = attributes[:request]
     @complete = attributes[:complete]
+    # Add pet_id and handler_id here and to attr_accessor
     
     @@all << self
   end 
@@ -17,6 +18,14 @@ class Appointment
   def self.all
     @@all
   end 
+
+  def self.first
+    @@all[0]
+  end 
+
+  def self.second
+    @@all[1]
+  end
 
   def self.by_index(idx)
     @@all[idx]

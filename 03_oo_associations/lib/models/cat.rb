@@ -2,14 +2,14 @@ class Cat < Pet
     attr_accessor :indoor, :drop_in_visit
     def initialize(attributes={})
         super(attributes)
-        @indoor = indoor
+        @indoor = attributes[:indoor]
         @drop_in_visit = nil
     end 
     
     def self.all
-        @@all.filter{|p| p.class == self}
+       @@all.filter{|p| p.class == self}
     end 
-    
+
     def visit
         @drop_in_visit = Time.now
     end

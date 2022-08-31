@@ -1,3 +1,4 @@
+# $ Identifies these as global variables
 $owner_data = [
   {
     username:"grannie52", 
