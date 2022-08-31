@@ -29,11 +29,21 @@ class Owner
         @@all[idx]
     end 
 
+    # Pet.all.filter((p) p.name == id)
     #Find every pet belonging to this owner
+    def pets
+        Pet.all.filter{|p| p.owner_id == self.id}
+    end 
 
     #Return the name of every pet belonging to this owner
-    
+    def pet_names
+        
+    end 
     
     #Instance methods
     #Adopt a pet
+
+    def pet_adopt(pet)
+        pet.owner_id = self.id
+    end 
 end 

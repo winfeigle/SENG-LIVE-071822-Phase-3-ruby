@@ -2,7 +2,7 @@ class Pet
     #Super class to Dog and Cat
     #Pet has a one-to-many relationship with Owner
     attr_reader :id
-    attr_accessor :name, :age, :breed, :image_url, :last_fed_at
+    attr_accessor :name, :age, :breed, :image_url, :last_fed_at, :owner_id
 
     @@all = []
     def initialize(attributes={})
@@ -14,8 +14,16 @@ class Pet
       @last_fed_at = nil
       @last_walked_at = nil
       #add owner_id here and in the attr_accessor
+      @owner_id = nil
       @@all << self
     end
+
+    # function foo(attributes){
+
+    # }
+    #foo({})
+
+ 
 
     #.Class methods
     def self.all
@@ -52,9 +60,14 @@ class Pet
     end
 
     # Retrun every appontment that belongs to a pet instance
+    def appointments 
+      Appointment.all.filter{|a| a.pet_id == self.id}
+    end 
 
     # Return every handler a pet instance is assoicated with
-
+    def handlers
+      self.appointments.map{|a| Handler.all.find{|h| a.handler_id == h.id}} 
+    end 
  
 
     
