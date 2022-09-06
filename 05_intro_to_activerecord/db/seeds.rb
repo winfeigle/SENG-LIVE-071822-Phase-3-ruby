@@ -173,3 +173,6 @@ $owner_data = [
   ]
   
 
+  $dogs_data.each{|d| Pet.create(d)}
+
+  puts('done')

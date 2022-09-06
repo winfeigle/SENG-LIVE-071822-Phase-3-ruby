@@ -9,3 +9,5 @@
 - [ ] Observe how AR uses SQL “under the hood” to communicate with databases
 
 
+# Steps for using Active Record 
+1. Draw out your models/classes/tables 

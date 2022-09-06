@@ -10,3 +10,8 @@ task :console do
   ActiveRecord::Base.logger = Logger.new(STDOUT)
   Pry.start
 end
+
+desc "Prints cats"
+task :cats do
+  puts('🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 🐈 ')
+end 
