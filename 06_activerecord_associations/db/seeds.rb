@@ -172,7 +172,7 @@ $owner_data = [
     }
   ]
   
-  
+
   Pet.destroy_all
   Handler.destroy_all
   Owner.destroy_all
@@ -181,5 +181,10 @@ $owner_data = [
   $cats_data.each{|c| Pet.create(c)}
   $dogs_data.each{|d| Pet.create(d)}
   $handler_data.each{|h| Handler.create(h)}
+  #add an owner id to every pet.owner_id
+  Pet.all.each{|p| p.update(owner_id: Owner.all.sample.id)}
+  25.times{Appointment.create(request:'walk', time:Time.now, pet_id: Pet.all.sample.id,handler_id:Handler.all.sample.id)}
+  25.times{Appointment.create(request:'visits', time:Time.now, pet_id: Pet.all.sample.id,handler_id:Handler.all.sample.id )}
+
 
 puts '🐈 Done! 🐕 '
