@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-
+gem 'pry'
 # Specify your gem's dependencies in ruby_fundamentals.gemspec
 
 # loads the rake command line tool for interacting with our rake tasks via the terminal
