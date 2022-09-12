@@ -171,43 +171,13 @@ $dogs_data = [
     image_url: "https://res.cloudinary.com/dnocv6uwb/image/upload/v1629822337/sn-color_qesmhx.jpg"
   }
 ]
-$request_data = [
-  {
-    time: Time.current,
-    pet_id: 4,
-    handler_id: 3
-  },  
-  {
-    time: Time.current,
-    pet_id: 2,
-    handler_id: 3
-  },
-  {
-    time: Time.current,
-    pet_id: 2,
-    handler_id: 2
-  },
-  {
-    time: Time.current,
-    pet_id: 1,
-    handler_id: 2
-  },
-  {
-    time: Time.current,
-    pet_id: 1,
-    handler_id: 2
-  },
-  {
-    time: Time.current,
-    pet_id: 2,
-    handler_id: 2
-  },
-]
 
 
 $cats_data.each{|c| Pet.create(c)}
 $dogs_data.each{|d| Pet.create(d)}
 $handler_data.each{|h| Handler.create(h)}
-$request_data.each{|r| Request.create(r)}
+25.times{Appointment.create(request:'walk', time:Time.now, pet_id: Pet.all.sample.id,handler_id:Handler.all.sample.id)}
+25.times{Appointment.create(request:'visits', time:Time.now, pet_id: Pet.all.sample.id,handler_id:Handler.all.sample.id )}
+
 
 puts '🐈 Done! 🐕 '
